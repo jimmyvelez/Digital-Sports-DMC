@@ -1,0 +1,104 @@
+/* =============================================
+   CARD CONTENEDOR
+   ============================================= */
+.card-tabla {
+    border-radius: 12px;
+    overflow: hidden; /* clave para que la tabla respete las esquinas */
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+ 
+/* =============================================
+   CABECERA DE CADA CARD
+   ============================================= */
+.card-tabla-header {
+    background-color: #003d99;
+    color: #ffffff;
+    padding: 14px 20px;
+}
+ 
+.card-tabla-header h4 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+ 
+/* =============================================
+   CABECERA DE LA TABLA (thead)
+   ============================================= */
+.card-tabla table thead tr {
+    background-color: #003d99;
+    color: #ffffff;
+}
+ 
+.card-tabla table thead th {
+    padding: 10px 14px;
+    font-weight: 500;
+    font-size: 13px;
+    border: none;
+    white-space: nowrap;
+}
+ 
+/* =============================================
+   CELDAS DEL CUERPO
+   ============================================= */
+.card-tabla table tbody td {
+    padding: 10px 14px;
+    vertical-align: middle;
+    font-size: 13px;
+    border-color: #e9ecef;
+    color: #212529 !important;
+}
+ 
+/* Columna VS en gris tenue */
+.vs-col {
+    color: #9ca3af;
+    font-size: 11px;
+    font-weight: 500;
+}
+ 
+/* Marcador en monospace */
+.marcador {
+    font-family: monospace;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+ 
+/* =============================================
+   BADGES DE ESTADO
+   ============================================= */
+.badge-estado {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+ 
+.badge-estado.jugado {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+ 
+.badge-estado.cancelado {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+ 
+.badge-estado.proximo {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.tablas-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+/* Columnas adicionales (hora y lugar) del calendario dinámico */
+.tablas-wrapper { max-width: 1040px; }
+.card-tabla { background-color: #ffffff; }
+.card-tabla table tbody tr { cursor: pointer; }
+.card-tabla .fila-mia td { background-color: #eef4ff !important; }
+.partido-fecha small { display: block; color: #6b7280; font-size: 11px; }
+.card-tabla table thead th { background-color: #003d99 !important; color: #ffffff !important; }

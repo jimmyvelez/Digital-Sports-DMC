@@ -1,0 +1,188 @@
+/* torneos.css — tarjetas de la página de torneos */
+/* Solo estilos exclusivos de las tarjetas de torneos.
+   Fuentes, h1 y .contenedor-tarjetas viven en style.css */
+
+/* ==========================================================================
+   VARIABLES DE SOMBRA (solo usadas por las tarjetas)
+   ========================================================================== */
+:root {
+  --shadow-soft: 0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.08);
+  --shadow-hover: 0 8px 20px rgba(0,0,0,0.08), 0 24px 48px rgba(0,0,0,0.12);
+}
+
+/* ==========================================================================
+   TARJETA BASE
+   ========================================================================== */
+.tarjeta {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  box-sizing: border-box;
+  padding: 0;
+  border-radius: 16px;
+  font-family: 'DM Sans', sans-serif;
+  overflow: hidden;
+  background-color: #ffffff;
+  border: 1px solid #e8edf5;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Barra superior de acento por color */
+.tarjeta::before {
+  content: '';
+  display: block;
+  height: 5px;
+  width: 100%;
+  background: var(--accent-color, #2563eb);
+  border-radius: 0;
+  flex-shrink: 0;
+}
+
+/* Color único a cada tarjeta */
+.tarjeta:nth-child(1) { --accent-color: #0f059e; --accent-light: #eff6ff; }
+.tarjeta:nth-child(2) { --accent-color: #0f059e; --accent-light: #f5f3ff; }
+.tarjeta:nth-child(3) { --accent-color: #0f059e; --accent-light: #ecfdf5; }
+.tarjeta:nth-child(4) { --accent-color: #0f059e; --accent-light: #fef2f2; }
+
+/* Área de contenido con padding */
+.tarjeta-contenido {
+  padding: 24px 26px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+
+
+/* Hover */
+.tarjeta:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.tarjeta:hover::after {
+  opacity: 0.25;
+  transform: rotate(15deg) scale(1.1);
+}
+
+/* ==========================================================================
+   TEXTOS INTERNOS DE LA TARJETA
+   ========================================================================== */
+.tarjeta h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #0f172a;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+}
+
+.tarjeta h5 {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--accent-light, #eff6ff);
+  color: var(--accent-color, #2563eb);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 18px;
+  width: fit-content;
+}
+
+.tarjeta p {
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin-bottom: 0;
+  flex-grow: 1;
+}
+
+/* Separador decorativo */
+.tarjeta-divider {
+  width: 36px;
+  height: 2px;
+  background: var(--accent-color, #2563eb);
+  border-radius: 2px;
+  margin-bottom: 14px;
+  opacity: 0.5;
+}
+
+/* Pie de tarjeta */
+.tarjeta-footer {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tarjeta-footer span {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.tarjeta-footer .tarjeta-count {
+  font-size: 1.5rem;
+  font-family: 'Bebas Neue', sans-serif;
+  color: var(--accent-color, #2563eb);
+  letter-spacing: 1px;
+}
+
+/* Botón de acción */
+.tarjeta-btn {
+  margin-top: 16px;
+  display: inline-block;
+  padding: 8px 18px;
+  background: var(--accent-color, #2563eb);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.tarjeta-btn:hover {
+  opacity: 0.88;
+  transform: scale(1.03);
+  color: #fff;
+}
+.tarjeta-btn:active {
+  transform: scale(0.98);
+  opacity: 0.8;
+}
+
+/* Tarjetas generadas dinámicamente: mismo acento que las cuatro originales */
+.tarjeta { --accent-color: #0f059e; --accent-light: #eff6ff; }
+.tarjeta:focus-visible { outline: 3px solid #0d6efd; outline-offset: 3px; }
+.tarjeta-estado {
+  align-self: flex-start;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.tarjeta-estado.activo { background: #dcfce7; color: #166534; }
+.tarjeta-estado.planificacion { background: #fef3c7; color: #92400e; }
+.tarjeta-estado.finalizado { background: #e5e7eb; color: #374151; }

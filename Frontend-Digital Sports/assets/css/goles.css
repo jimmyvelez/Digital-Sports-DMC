@@ -1,0 +1,164 @@
+/* ===== GOLES PAGE STYLES ===== */
+ 
+/* El fondo, la tipografía y el título (.titulo-pagina) vienen de global.css,
+   igual que en el resto del sitio. Antes esta hoja los reemplazaba (fondo claro
+   y título con barra verde), lo que rompía la identidad visual. */
+
+/* Tarjeta contenedora */
+.card-goles {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    padding: 2rem;
+    border: none;
+}
+ 
+.card-goles h6 {
+    font-size: 0.95rem;
+    color: #1a1a2e !important;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+ 
+/* Tabla */
+.tabla-goles thead tr {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #ffffff;
+}
+ 
+.tabla-goles thead th {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 12px 16px;
+    border: none;
+    color: #ffffff;
+}
+ 
+.tabla-goles tbody tr {
+    transition: background 0.2s ease;
+    border-bottom: 1px solid #f0f0f0;
+}
+ 
+.tabla-goles tbody tr:hover {
+    background-color: #f0fff4;
+}
+ 
+.tabla-goles tbody td {
+    padding: 11px 16px;
+    font-size: 0.88rem;
+    vertical-align: middle;
+    color: #333333;
+}
+ 
+/* Badges */
+.badge-partido {
+    background-color: #e8f0fe;
+    color: #1a56db;
+    font-weight: 600;
+    font-size: 0.78rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-family: monospace;
+}
+ 
+.badge-gol {
+    background-color: #dcfce7;
+    color: #15803d;
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-family: monospace;
+}
+ 
+.badge-est {
+    background-color: #fef9c3;
+    color: #854d0e;
+    font-weight: 600;
+    font-size: 0.78rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-family: monospace;
+}
+ 
+/* Botón ver más */
+.btn-ver-todo {
+    background: #1a1a2e;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background 0.2s, transform 0.1s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+ 
+.btn-ver-todo:hover {
+    background: #198754;
+    color: #fff;
+    transform: translateY(-1px);
+}
+ 
+.btn-ver-todo .icono {
+    font-size: 1.1rem;
+    line-height: 1;
+    transition: transform 0.2s;
+}
+ 
+.btn-ver-todo.abierto .icono {
+    transform: rotate(90deg);
+}
+ 
+/* Stats resumen */
+.stats-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+ 
+.stat-card {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: white;
+    border-radius: 12px;
+    padding: 14px 20px;
+    min-width: 130px;
+    text-align: center;
+}
+ 
+.stat-card .stat-num {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #4ade80;
+    line-height: 1;
+}
+ 
+.stat-card .stat-label {
+    font-size: 0.72rem;
+    color: #a0aec0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+}
+ 
+/* Animación filas */
+.fila-oculta {
+    animation: fadeIn 0.3s ease;
+}
+ 
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+/* Filas del ranking que se muestran al pulsar "Ver todos" */
+.tabla-goles tbody tr.fila-oculta { display: none; }
+.tabla-goles.expandida tbody tr.fila-oculta { display: table-row; }
+#tablaGoleadores tr:first-child .badge-partido,
+#tablaGoleadores tr:nth-child(2) .badge-partido,
+#tablaGoleadores tr:nth-child(3) .badge-partido { background-color: #fef3c7; color: #92400e; }

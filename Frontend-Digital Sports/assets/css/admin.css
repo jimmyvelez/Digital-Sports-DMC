@@ -1,0 +1,196 @@
+/* ============================================
+   PANEL DE ADMINISTRADOR
+   Se apoya en las variables/clases ya definidas
+   en style.css (navbar-custom, titulo-pagina).
+============================================ */
+
+.admin-tabs .nav-link {
+    color: #495057;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    border-bottom: 3px solid transparent;
+    padding: 10px 16px;
+}
+
+.admin-tabs .nav-link.active {
+    color: #003d99;
+    border-bottom: 3px solid #003d99;
+    background: transparent;
+}
+
+.admin-card {
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    padding: 0.5rem;
+}
+
+.admin-card table thead {
+    background-color: #003d99;
+}
+
+.admin-card table thead th {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    border: none;
+    padding: 10px 12px;
+    white-space: nowrap;
+}
+
+.admin-card table tbody td {
+    font-size: 13.5px;
+    padding: 10px 12px;
+    vertical-align: middle;
+    color: #212529 !important;
+}
+
+.modal-content {
+    color: #212529 !important;
+}
+
+.modal-content label {
+    color: #212529 !important;
+}
+
+
+.admin-card table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.btn-admin {
+    background-color: #003d99;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 13.5px;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+}
+
+.btn-admin:hover {
+    background-color: #002d73;
+    color: #ffffff;
+}
+
+.btn-accion {
+    border: none;
+    background: transparent;
+    font-size: 15px;
+    padding: 2px 6px;
+}
+
+.btn-accion.editar {
+    color: #003d99;
+}
+
+.btn-accion.eliminar {
+    color: #c0392b;
+}
+
+.thumb-noticia {
+    width: 56px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.badge-estado-admin {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.badge-estado-admin.jugado {
+    background-color: #e4f1e9;
+    color: #1f6b45;
+}
+
+.badge-estado-admin.proximo {
+    background-color: #e6f0fb;
+    color: #0c447c;
+}
+
+.badge-estado-admin.cancelado {
+    background-color: #f7e3e1;
+    color: #9a3226;
+}
+/* ============================================
+   Complementos del panel de gestión
+============================================ */
+.admin-tabs { border-bottom-color: rgba(255, 255, 255, 0.2); }
+.admin-tabs .nav-link { color: rgba(255, 255, 255, 0.75); white-space: nowrap; }
+.admin-tabs .nav-link:hover { color: #ffffff; }
+.admin-tabs .nav-link.active { color: #ffffff; border-bottom-color: #0d6efd; }
+
+.admin-card .ds-estado { color: #495057; }
+.btn-accion { line-height: 1; }
+.btn-accion:hover { transform: scale(1.12); }
+.btn-accion:disabled { opacity: 0.35; transform: none; }
+.btn-accion.resultado { color: #1f6b45; }
+.btn-accion.plantilla { color: #6f42c1; }
+.btn-accion.estado { color: #b45309; }
+
+.badge-rol { padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+.badge-rol.admin { background: #ede9fe; color: #5b21b6; }
+.badge-rol.docente { background: #e6f0fb; color: #0c447c; }
+.badge-rol.estudiante { background: #e4f1e9; color: #1f6b45; }
+.badge-estado-admin.inactivo, .badge-estado-admin.retirada, .badge-estado-admin.anulada, .badge-estado-admin.oculto { background-color: #f7e3e1; color: #9a3226; }
+.badge-estado-admin.activo, .badge-estado-admin.publicada, .badge-estado-admin.visible, .badge-estado-admin.cerrada { background-color: #e4f1e9; color: #1f6b45; }
+.badge-estado-admin.borrador, .badge-estado-admin.registrada, .badge-estado-admin.planificacion { background-color: #e6f0fb; color: #0c447c; }
+.badge-estado-admin.en_revision { background-color: #fef3c7; color: #92400e; }
+.badge-estado-admin.finalizado { background-color: #e5e7eb; color: #374151; }
+
+.paginador .btn { min-width: 38px; }
+.paginador span { color: rgba(255, 255, 255, 0.8); font-size: 0.85rem; }
+.texto-corto { max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Bootstrap 5.3 pinta cada celda con --bs-table-bg (blanco) y ocultaba el
+   encabezado azul declarado arriba: se aplica el color a las celdas th. */
+.admin-card table thead th { background-color: #003d99 !important; color: #ffffff !important; }
+
+/* style.css aclara .text-muted para el fondo oscuro; en los modales blancos se restaura */
+.modal-content:not(.ds-modal-oscuro .modal-content) .text-muted,
+.modal-content .form-text { color: #6c757d !important; }
+.admin-card .text-muted { color: #6c757d !important; }
+
+/* ============================================
+   Botones de acción de las tablas (Bootstrap Icons)
+============================================ */
+.btn-accion {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 4px;
+    border: 1px solid #dfe5ee;
+    border-radius: 8px;
+    background: #ffffff;
+    font-size: 15px;
+    transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+.btn-accion:hover:not(:disabled) { transform: translateY(-1px); }
+.btn-accion.editar:hover:not(:disabled) { background: #e6f0fb; border-color: #9ec5fe; }
+.btn-accion.eliminar:hover:not(:disabled) { background: #fdecea; border-color: #f1aeb5; }
+.btn-accion.resultado:hover:not(:disabled) { background: #e4f1e9; border-color: #a3cfbb; }
+.btn-accion.plantilla:hover:not(:disabled) { background: #efe9fb; border-color: #c5b3ef; }
+.btn-accion.estado:hover:not(:disabled) { background: #fef3c7; border-color: #f5d57a; }
+.btn-accion:disabled { opacity: 0.3; cursor: not-allowed; }
+
+/* Pestañas desplazables en pantallas pequeñas */
+.admin-tabs { scrollbar-width: thin; }
+.admin-tabs .nav-link { padding: 10px 14px; }
+
+/* Filtros en móvil: ocupan todo el ancho */
+@media (max-width: 576px) {
+    .tab-pane > .d-flex .form-select,
+    .tab-pane > .d-flex .form-control { width: 100% !important; }
+    .tab-pane > .d-flex > .d-flex { width: 100%; }
+    .tab-pane > .d-flex > .btn-admin { width: 100%; }
+}

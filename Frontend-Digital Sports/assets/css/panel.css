@@ -1,0 +1,122 @@
+/* ==========================================================================
+   PANEL (dashboards), NOTIFICACIONES Y PERFIL
+   Reutiliza la identidad de style.css: tarjetas negras #111 con borde azul,
+   títulos Bebas Neue y acento #0d6efd.
+   ========================================================================== */
+
+/* Tarjetas de indicadores */
+.panel-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.panel-stat {
+  background: #111111;
+  border: 1px solid rgba(13, 110, 253, 0.4);
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  text-decoration: none;
+  color: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+a.panel-stat:hover { transform: translateY(-3px); box-shadow: 0 0 20px rgba(13, 110, 253, 0.3); color: #ffffff; }
+.panel-stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.3rem;
+  line-height: 1;
+  letter-spacing: 1px;
+  color: #0d6efd;
+}
+.panel-stat-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 6px;
+}
+
+/* Bloques del panel */
+.panel-bloque {
+  background: rgba(17, 17, 17, 0.92);
+  border: 1px solid rgba(13, 110, 253, 0.35);
+  border-radius: 16px;
+  padding: 20px;
+  height: 100%;
+}
+.panel-bloque h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+.panel-lista { list-style: none; padding: 0; margin: 0; }
+.panel-lista li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.panel-lista li:last-child { border-bottom: none; }
+.panel-lista .meta { font-size: 0.78rem; color: rgba(255, 255, 255, 0.55); }
+.panel-lista a { color: #ffffff; text-decoration: none; }
+.panel-lista a:hover { color: #0d6efd; }
+.panel-marcador {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  color: #0d6efd;
+  white-space: nowrap;
+}
+
+/* Próximo partido destacado */
+.panel-destacado {
+  background: linear-gradient(135deg, rgba(13, 110, 253, 0.25), rgba(124, 58, 237, 0.2)), #111111;
+  border: 1px solid rgba(13, 110, 253, 0.6);
+  border-radius: 16px;
+  padding: 22px;
+  text-align: center;
+}
+.panel-destacado .vs {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  letter-spacing: 2px;
+}
+
+/* Accesos rápidos */
+.panel-accesos { display: flex; flex-wrap: wrap; gap: 10px; }
+.panel-accesos .btn { font-weight: 600; }
+
+/* Notificaciones */
+.noti-item {
+  display: flex;
+  gap: 14px;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 4px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+.noti-item.no-leida { border-left-color: #0d6efd; background: #0f1623; }
+.noti-item .noti-titulo { font-weight: 700; margin-bottom: 2px; }
+.noti-item .noti-mensaje { color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; margin-bottom: 6px; }
+.noti-item .noti-meta { font-size: 0.75rem; color: rgba(255, 255, 255, 0.5); }
+.noti-icono {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(13, 110, 253, 0.15);
+  font-size: 1.2rem;
+}
+
+/* Perfil */
+.card-custom .form-control:disabled { opacity: 0.6; }

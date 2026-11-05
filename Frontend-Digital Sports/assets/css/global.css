@@ -1,0 +1,581 @@
+/* ==========================================================================
+   IMPORTACIÓN DE FUENTES
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+/* ==========================================================================
+   FONDO GENERAL DE LA PÁGINA
+   ========================================================================== */
+body {
+  background-image: url(../img/fondo.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: #ffffff !important; /* <--- COLOR DE LETRA BLANCO PARA TODA LA PÁGINA */
+}
+
+/* ==========================================================================
+   1. BARRA DE NAVEGACIÓN SUPERIOR (Diseño Negro con Azul)
+   ========================================================================== */
+nav.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1030;
+  
+  /* Fondo Negro Absoluto */
+  background-color: #111111 !important;
+  
+  /* BORDES EN AZUL DEPORTIVO */
+  border-bottom: 4px solid #0d6efd !important; /* Línea inferior azul */
+  border-top: 1px solid #050505;
+  
+  /* Sombra con un sutil destello azul (efecto Glow) para resaltar el diseño */
+  box-shadow: 0px 4px 20px rgba(13, 110, 253, 0.25) !important;
+}
+
+/* El texto del logo en blanco para la barra negra */
+nav.navbar h1,
+nav.navbar .ds-marca {
+  font-family: 'Bebas Neue', sans-serif !important;
+  letter-spacing: 3px !important;
+  color: #ffffff !important;
+}
+
+/* Borde del botón del menú (hamburguesa) en azul */
+nav.navbar .navbar-toggler {
+  border: 1px solid #0d6efd !important; 
+}
+
+/* Filtro para volver blanco el icono de tres líneas y que sea visible */
+nav.navbar .navbar-toggler-icon {
+  filter: invert(1) !important; 
+}
+
+
+/* ==========================================================================
+   2. CONTROL Y ESTILO DEL MENÚ DESLIZABLE (OFFCANVAS - Negro con Azul)
+   ========================================================================== */
+.offcanvas.offcanvas-start {
+  width: 280px !important; 
+  
+  /* Fondo Negro Absoluto (Igual al Nav) */
+  background-color: #111111 !important; 
+  
+  /* Borde derecho en Azul Deportivo para enmarcar el menú */
+  border-right: 4px solid #0d6efd !important;
+  
+  /* Sombra con destello azul lateral */
+  box-shadow: 4px 0px 20px rgba(13, 110, 253, 0.15) !important; 
+  
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.offcanvas-backdrop {
+  display: none !important;
+}
+
+/* Título del menú en color blanco */
+.offcanvas .offcanvas-title {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+/* Forzamos a que el botón de cerrar (X) sea blanco y visible sobre el negro */
+.offcanvas .btn-close {
+  filter: invert(1) !important;
+  opacity: 0.8;
+}
+.offcanvas .btn-close:hover {
+  opacity: 1;
+}
+
+/* Opciones del menú en Blanco Brillante */
+.offcanvas .nav-link {
+  color: #ffffff !important; 
+  font-weight: 600;
+  transition: all 0.25s ease-in-out;
+}
+
+/* EFECTO HOVER PREMIUM: El fondo se ilumina en azul translúcido y el texto en azul brillante */
+.offcanvas .nav-link:hover {
+  background-color: rgba(13, 110, 253, 0.15) !important; 
+  color: #0d6efd !important; 
+  padding-left: 24px !important;
+}
+
+
+/* ==========================================================================
+   3. ADAPTACIÓN UNIVERSAL DE LA PANTALLA (Fuerza al resto de la web a encogerse)
+   ========================================================================== */
+nav.navbar ~ * {
+  width: 100%;
+  margin-left: 0;
+  transition: margin-left 0.4s cubic-bezier(0.25, 1, 0.5, 1), width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: margin-left, width; 
+}
+
+body:has(#menuDeslizable.show) nav.navbar ~ * {
+  margin-left: 280px !important; 
+  width: calc(100% - 280px) !important; 
+}
+
+
+/* ==========================================================================
+   4. AJUSTE DE LAS IMÁGENES DEL CARRUSEL
+   ========================================================================== */
+main {
+  padding-top: 0;
+}
+
+.carousel-container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-inner img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: brightness(0.85);
+}
+
+/* Imagen carrusel3 (banner/logo) — se muestra completa sin recorte */
+.carousel-item.slide-banner img {
+  object-fit: contain;
+  background-color: #0a0a0a;
+}
+
+.carousel-item {
+  position: relative;
+}
+
+.carousel-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.85) 100%);
+  pointer-events: none;
+}
+
+.carousel-caption {
+  z-index: 10;
+  bottom: 12%;
+  padding: 0 15px;
+}
+
+.carousel-caption h2 {
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: clamp(2.2rem, 5.5vw, 3.8rem) !important;
+  letter-spacing: 3px !important;
+  color: #ffffff !important;
+  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.9);
+  margin-bottom: 10px;
+}
+
+.carousel-caption p {
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+  max-width: 650px;
+  margin: 0 auto 20px;
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 28px;
+  height: 5px;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  margin: 0 5px;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicators .active {
+  background-color: #0d6efd;
+  width: 44px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 44px;
+  height: 44px;
+  background-color: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(13, 110, 253, 0.6);
+  border-radius: 50%;
+  background-size: 50%;
+  transition: all 0.25s ease;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  box-shadow: 0 0 15px rgba(13, 110, 253, 0.7);
+}
+
+
+
+/* ==========================================================================
+   5. OPTIMIZACIÓN RESPONSIVA PARA CELULARES
+   ========================================================================== */
+@media (max-width: 768px) {
+  body:has(#menuDeslizable.show) nav.navbar ~ * {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  
+  .offcanvas.offcanvas-start {
+    width: 100% !important;
+    border-right: none !important;
+    border-bottom: 4px solid #0d6efd !important;
+  }
+  
+  .carousel-inner img {
+    height: 260px;
+  }
+
+  .carousel-container {
+    border-radius: 10px;
+  }
+
+  main {
+    padding-top: 20px;
+  }
+}
+
+
+/* ==========================================================================
+   6. ANULAR CLASES DE BOOTSTRAP QUE SOBREESCRIBEN EL COLOR BLANCO
+   ========================================================================== */
+
+/* Bootstrap pone estas clases en muchos elementos; las forzamos a blanco en la interfaz oscura */
+.text-dark {
+  color: #ffffff !important;
+}
+
+nav.navbar .text-dark,
+nav.navbar h1,
+nav.navbar .ds-marca {
+  color: #ffffff !important;
+}
+
+.text-muted {
+  color: rgba(225, 218, 218, 0.6) !important;
+}
+
+.text-secondary {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Títulos y párrafos generales */
+h1, h2, h3, h4, h5, h6, p, span, label, td, th, li {
+  color: inherit;
+}
+
+/* ==========================================================================
+   7. TAMAÑO UNIFORME PARA LOS H1 DE CADA PÁGINA
+   ========================================================================== */
+.titulo-pagina,
+body > h1,
+main h1,
+.container > h1 {
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: clamp(2rem, 5vw, 3.5rem) !important;
+  font-weight: 400 !important;
+  letter-spacing: 4px !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  margin: 48px 0 8px !important;
+  color: #ffffff !important;
+}
+
+.titulo-pagina::after,
+body > h1::after,
+main h1::after,
+.container > h1::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   CONTENEDOR DE TARJETAS — centrado perfecto (compartido entre páginas)
+   ========================================================================== */
+.contenedor-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 300px));
+  justify-content: center;
+  align-items: start;
+  gap: 28px;
+  padding: 48px 24px 64px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.offcanvas-body .nav-link {
+    display: flex;
+    align-items: center;
+}
+
+/* ==========================================================================
+   TARJETAS PERSONALIZADAS Y COMPONENTES (Login, Registro, etc.)
+   ========================================================================== */
+.card-custom {
+  background: #111111;
+  border: 1px solid rgba(13, 110, 253, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(13, 110, 253, 0.15);
+  color: #ffffff;
+}
+
+.footer-custom {
+  background-color: #111111;
+  border-top: 3px solid #0d6efd;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.animate-fade-in {
+  animation: fadeInPage 0.4s ease-in-out;
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ==========================================================================
+   8. COMPONENTES COMPARTIDOS (sesión, notificaciones, estados y avisos)
+   Mantienen la identidad: negro #111111 + azul deportivo #0d6efd.
+   ========================================================================== */
+.ds-zona-usuario { position: relative; }
+
+.ds-avatar-link img { transition: box-shadow 0.2s ease; }
+.ds-avatar-link:hover img,
+.ds-avatar-link:focus-visible img { box-shadow: 0 0 0 2px #0d6efd; }
+
+.ds-campana {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  color: #ffffff;
+  border: 1px solid rgba(13, 110, 253, 0.6);
+  transition: background-color 0.2s ease;
+}
+.ds-campana:hover { background-color: rgba(13, 110, 253, 0.2); color: #ffffff; }
+.ds-campana-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 10px;
+  background: #dc3545;
+  color: #ffffff !important;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+}
+
+.ds-dropdown {
+  background-color: #111111;
+  border: 1px solid rgba(13, 110, 253, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+}
+.ds-dropdown .dropdown-item { color: #ffffff; font-weight: 500; }
+.ds-dropdown .dropdown-item:hover,
+.ds-dropdown .dropdown-item:focus { background-color: rgba(13, 110, 253, 0.2); color: #ffffff; }
+.ds-dropdown .dropdown-divider { border-color: rgba(255, 255, 255, 0.15); }
+.ds-texto-suave { color: rgba(255, 255, 255, 0.6) !important; }
+
+/* Estados de carga / vacío / error sobre el fondo oscuro */
+.ds-estado { color: rgba(255, 255, 255, 0.75); }
+.ds-estado-error { color: #ffb4b4; }
+.admin-card .ds-estado, .card-tabla .ds-estado, .pos-card .ds-estado { color: #495057; }
+
+/* Toasts */
+.ds-toast {
+  background-color: #111111;
+  color: #ffffff;
+  border: 1px solid rgba(13, 110, 253, 0.5);
+  border-left: 4px solid #0d6efd;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+.ds-toast-error { border-left-color: #dc3545; border-color: rgba(220, 53, 69, 0.5); }
+.ds-toast .toast-body { color: #ffffff; }
+
+/* Modales oscuros (mismo estilo que el modal de torneos) */
+.ds-modal-oscuro .modal-content {
+  background: #111111;
+  border: 1px solid rgba(13, 110, 253, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 0 40px rgba(13, 110, 253, 0.2);
+  color: #ffffff !important;
+}
+.ds-modal-oscuro .modal-content label,
+.ds-modal-oscuro .modal-title { color: #ffffff !important; }
+.ds-modal-oscuro .form-control,
+.ds-modal-oscuro .form-select {
+  background-color: #1a1a1a;
+  border-color: #333333;
+  color: #ffffff;
+}
+
+/* Estados de partido adicionales (complementan partidos.css) */
+.badge-estado {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.badge-estado.jugado { background-color: #dbeafe; color: #1e40af; }
+.badge-estado.cancelado { background-color: #fee2e2; color: #991b1b; }
+.badge-estado.proximo { background-color: #dcfce7; color: #166534; }
+.badge-estado.en-juego { background-color: #fef3c7; color: #92400e; }
+.badge-estado.suspendido { background-color: #e5e7eb; color: #374151; }
+
+/* Filtros sobre el fondo oscuro */
+.ds-filtros {
+  background: rgba(17, 17, 17, 0.85);
+  border: 1px solid rgba(13, 110, 253, 0.35);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+.ds-filtros .form-label { color: rgba(255, 255, 255, 0.8) !important; font-size: 0.78rem; margin-bottom: 4px; }
+
+/* Botón "cargar más" */
+.ds-mas { display: flex; justify-content: center; padding: 8px 0 40px; }
+
+
+/* ==========================================================================
+   9. AJUSTES GENERALES DE LA INTERFAZ
+   ========================================================================== */
+/* Color base oscuro: si la imagen de fondo tarda en cargar, el texto blanco
+   sigue siendo legible (antes algunas páginas quedaban sobre blanco). */
+html { background-color: #050505; }
+body { background-color: #050505 !important; }
+main { min-height: calc(100vh - 220px); }
+
+/* .text-dark se fuerza a blanco para el fondo oscuro; dentro de tarjetas,
+   tablas y modales claros se restaura el color oscuro para que sea legible. */
+.card .text-dark, .card-goles .text-dark, .admin-card .text-dark, .tarjeta .text-dark,
+.modal-content:not(.ds-modal-oscuro .modal-content) .text-dark { color: #212529 !important; }
+
+/* Barra superior */
+.ds-zona-usuario .ds-campana i { font-size: 1.15rem; line-height: 1; }
+.ds-logo { transition: width 0.2s ease, height 0.2s ease; }
+.ds-icono-menu { font-size: 1.3rem; width: 25px; text-align: center; color: #0d6efd; }
+.ds-separador-menu { border-color: rgba(255, 255, 255, 0.15); margin: 6px 12px; }
+.offcanvas .nav-link.active { background-color: rgba(13, 110, 253, 0.2) !important; color: #ffffff !important; }
+
+@media (max-width: 576px) {
+  .ds-logo { width: 54px; height: 54px; }
+  nav.navbar .btn-outline-primary { padding: 6px 10px; }
+  .ds-zona-usuario img { width: 36px; height: 36px; }
+  .ds-campana { width: 36px; height: 36px; }
+}
+
+/* Pie de página común */
+.footer-custom { margin-top: 48px; }
+.footer-custom p { color: rgba(255, 255, 255, 0.75); }
+
+/* Enfoque visible para navegación con teclado */
+a:focus-visible, button:focus-visible, .btn:focus-visible { outline: 2px solid #0d6efd; outline-offset: 2px; }
+
+/* Encabezados de tablas claras: Bootstrap 5.3 pinta las celdas de blanco y
+   ocultaba el azul de encabezado declarado en las hojas de cada página. */
+.card-tabla table thead th, .admin-card table thead th, .tabla-goles thead th { background-color: #003d99 !important; color: #ffffff !important; }
+
+/* ==========================================================================
+   10. SPINNER DE CARGA GLOBAL (Digital Sports DMC)
+   ========================================================================== */
+#ds-global-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(5, 5, 5, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  pointer-events: none;
+}
+
+#ds-global-spinner.activo {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.ds-spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 36px;
+  background: #111111;
+  border: 1px solid rgba(13, 110, 253, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(13, 110, 253, 0.25);
+}
+
+.ds-spinner-ring {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(13, 110, 253, 0.15);
+  border-top-color: #0d6efd;
+  border-radius: 50%;
+  animation: dsSpinnerRotate 0.75s linear infinite;
+}
+
+@keyframes dsSpinnerRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.ds-spinner-texto {
+  margin-top: 14px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+

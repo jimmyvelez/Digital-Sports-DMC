@@ -1,0 +1,290 @@
+/* Estilos de la página (antes embebidos en el HTML) */
+/* ── HERO ── */
+.hero {
+  padding: 80px 24px 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #0d6efd;
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 9vw, 5.5rem);
+  letter-spacing: 3px;
+  line-height: 1;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+}
+
+.hero-title span { color: #0d6efd; }
+
+.hero-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.65);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* ── SECCIONES GENERALES ── */
+.section-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #0d6efd;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  letter-spacing: 2px;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.section-title span { color: #0d6efd; }
+
+.section-body {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.97rem;
+  max-width: 620px;
+}
+
+.page-section {
+  padding: 64px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+hr.divider {
+  border-color: rgba(255,255,255,0.08);
+  margin: 0;
+}
+
+/* ── PROBLEMA / SOLUCIÓN ── */
+.ps-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 700px) { .ps-grid { grid-template-columns: 1fr; } }
+
+.ps-card {
+  border-radius: 12px;
+  padding: 2rem 1.75rem;
+  background: rgba(17, 17, 17, 0.92);
+  border: 1px solid rgba(13, 110, 253, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.ps-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+}
+
+.ps-card.problem::before { background: #dc3545; }
+.ps-card.solution::before { background: #0d6efd; }
+
+.ps-card-icon { font-size: 1.6rem; margin-bottom: 1rem; display: block; }
+
+.ps-card h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.ps-card p {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ── OBJETIVOS ── */
+.obj-section {
+  background: rgba(17, 17, 17, 0.92);
+  border: 1px solid rgba(13, 110, 253, 0.35);
+  border-bottom: 1px solid rgba(13,110,253,0.2);
+}
+
+.obj-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.obj-card {
+  background: rgba(17, 17, 17, 0.92);
+  border: 1px solid rgba(13, 110, 253, 0.35);
+  border-radius: 10px;
+  padding: 1.5rem 1.25rem;
+}
+
+.obj-card.obj-main {
+  border-color: rgba(13,110,253,0.5);
+  background: rgba(13,110,253,0.08);
+}
+
+.obj-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  color: #0d6efd;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.obj-card h4 {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+}
+
+.obj-card p {
+  font-size: 0.84rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── MISIÓN / VISIÓN ── */
+.mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 600px) { .mv-grid { grid-template-columns: 1fr; } }
+
+.mv-card {
+  padding: 1.75rem;
+  border-radius: 10px;
+  background: rgba(17, 17, 17, 0.92);
+  border: 1px solid rgba(13, 110, 253, 0.35);
+  border-left: 4px solid #0d6efd;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-right: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.mv-card h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.35rem;
+  letter-spacing: 1px;
+  color: #ffffff;
+  margin-bottom: 0.6rem;
+}
+
+.mv-card p {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ── VALORES ── */
+.valores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.valor-pill {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.valor-pill:hover {
+  border-color: rgba(13,110,253,0.5);
+  background: rgba(13,110,253,0.08);
+}
+
+.valor-pill .emoji { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
+
+.valor-pill span:last-child {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(255,255,255,0.85);
+}
+
+/* ── EQUIPO ── */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.team-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.75rem 1rem;
+  text-align: center;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.team-card:hover {
+  border-color: rgba(13,110,253,0.5);
+  transform: translateY(-3px);
+}
+
+.avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(13,110,253,0.2);
+  border: 2px solid rgba(13,110,253,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.4rem;
+  color: #0d6efd;
+}
+
+.team-card .role {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.3px;
+}
+
+/* ── FOOTER ── */
+footer.site-footer {
+  background: #111111;
+  border-top: 4px solid #0d6efd;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.4);
+}
+
+footer.site-footer span { color: #0d6efd; }
+

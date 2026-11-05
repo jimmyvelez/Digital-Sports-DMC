@@ -1,0 +1,60 @@
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS PARA REGISTRO Y LOGIN
+   ========================================================================== */
+
+.card-custom {
+    background: #111111;
+    border: 1px solid rgba(13, 110, 253, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 25px rgba(13, 110, 253, 0.15);
+    color: #ffffff;
+}
+
+.card-custom .form-label {
+    color: #ffffff !important;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.card-custom .input-group-text {
+    background-color: #1a1a1a !important;
+    border-color: #333333 !important;
+    color: #0d6efd !important;
+}
+
+.card-custom .form-control {
+    background-color: #1a1a1a !important;
+    border-color: #333333 !important;
+    color: #ffffff !important;
+    font-size: 0.9rem;
+}
+
+.card-custom .form-control:focus {
+    border-color: #0d6efd !important;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25) !important;
+    background-color: #222222 !important;
+}
+
+.card-custom .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.card-custom .text-muted {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.card-custom .btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.card-custom .btn-primary:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+    box-shadow: 0 0 15px rgba(13, 110, 253, 0.4);
+    transform: translateY(-1px);
+}

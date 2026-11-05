@@ -1,0 +1,96 @@
+/* Estilos de la página (antes embebidos en el HTML) */
+/* Animación de entrada para las tarjetas:
+       empiezan invisibles y desplazadas hacia abajo,
+       luego suben y aparecen suavemente */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Clase que activa la animación en cada tarjeta.
+       animation-fill-mode: both → mantiene el estado final al terminar */
+    .card-animada {
+        opacity: 0;
+        animation: fadeInUp 0.4s ease forwards;
+    }
+
+/* ===== TiTULO ===== */
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #d3d3dd;
+}
+
+h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #707075;
+    border-left: 4px solid #0d6efd;
+    padding-left: 10px;
+}
+
+/* ===== FILTROS ===== */
+.form-select {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.form-select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* ===== CARDS ===== */
+.card {
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #ffffff;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+    font-size: 1rem;
+    color: #0d6efd;
+    margin-bottom: 8px;
+}
+
+.card p,
+.card .text-muted {
+    font-size: 0.85rem;
+    color: #495057 !important;
+}
+
+/* ===== SECCIONES ===== */
+.container {
+    max-width: 1100px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .d-flex.gap-2 {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .form-select {
+        width: 100%;
+    }
+}

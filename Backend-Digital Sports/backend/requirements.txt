@@ -1,0 +1,31 @@
+# =============================================================================
+# requirements.txt — Dependencias del backend Digital Sports DMC (MySQL / XAMPP)
+# =============================================================================
+#
+# Para instalar todas las dependencias:
+#   pip install -r backend/requirements.txt
+#
+#   flask            → Framework web principal (incluye Werkzeug, Jinja2, Click,
+#                      itsdangerous: firma de la cookie de sesión y de los
+#                      enlaces de recuperación de contraseña).
+#   flask-sqlalchemy → ORM para trabajar con la base de datos usando objetos Python.
+#   pymysql          → Driver de conexión para el MySQL de XAMPP.
+#   flask-cors       → Permite consumir la API desde otro origen (ya se importaba
+#                      en el código, pero faltaba en este archivo).
+#   python-dotenv    → Lee la configuración (SECRET_KEY, DATABASE_URL...) de un
+#                      archivo .env para no escribir credenciales en el código.
+#   pytest           → Pruebas automatizadas (carpeta tests/).
+#
+# Dependencias NO incluidas (y por qué):
+#   flask-login      → No necesario. Usamos flask.session con decoradores propios.
+#   flask-migrate    → No necesario. Usamos db.create_all() + backend/migraciones.py.
+# =============================================================================
+
+flask==3.1.1
+flask-sqlalchemy==3.1.1
+pymysql>=1.1.1
+flask-cors>=4.0
+python-dotenv>=1.0
+pytest>=8.0
+google-auth>=2.0
+requests>=2.28
